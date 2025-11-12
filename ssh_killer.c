@@ -5,7 +5,8 @@
 int main(int argc, char *argv[])
 {
         char *data;
-        const char *spliter = "\n\0";
+        const char *spliter_new_line = "\n\0";
+        const char *spliter_by_space = " \0";
         char **line;
         char **word;
         int i = 0;
@@ -14,12 +15,12 @@ int main(int argc, char *argv[])
         {
                 system("echo \"$(ps aux | grep ssh)\" > /home/lahbabi1chems3eddine/ssh_killer/log_port_22\0");
                 data = read_file("/home/lahbabi1chems3eddine/ssh_killer/log_port_22\0");
-                line = strsplit_v1(data, spliter);
+                line = strsplit_v1(data, spliter_new_line);
                 while(line[i] != '\0')
                 {
                         if(strcontains(strdup(line[i]), strdup(argv[0])) == 0)
                                 continue;
-                        word = strsplit_v1(line[i], " \0");
+                        word = strsplit_v1(line[i], spliter_by_space);
                         while(word[j] != '\0')
                         {
                                 if((atoi(word[j]) != 0))
