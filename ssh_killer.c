@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-        const char *data;
+        char *data;
         const char *spliter = "\n\0";
         char **line;
         char **word;
