@@ -69,7 +69,7 @@ const char *strconcatenate(const char *str0, const char *str1)
                 *(res+(length0+i+1)*sizeof(char)) = *(str1+(i*sizeof(char)));
                 i++;
         }
-        *(res+(length0+i)*sizeof(char)) = '\0';
+        *(res+(length0+i+1)*sizeof(char)) = '\0';
         return 0;
 }
 
